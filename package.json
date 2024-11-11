@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "build": "tsc"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
     "caching-proxy": "./src/index.js"
@@ -21,8 +18,5 @@
     "express": "^4.21.1",
     "node-cache": "^5.1.2",
     "yargs": "^17.7.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.7"
   }
 }
