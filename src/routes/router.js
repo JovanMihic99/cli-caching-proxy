@@ -11,16 +11,13 @@ const router = express.Router();
 
 router.get("*", async (req, res) => {
   const newUrl = req.origin + req.url;
-  console.log({ newUrl });
   const cachedResponse = cache.get(newUrl);
 
   if (cachedResponse) {
-    console.log("hit");
     res.setHeader("X-Cache", "HIT");
     return res.status(200).json(cachedResponse.data);
   }
   try {
-    console.log("miss");
     res.setHeader("X-Cache", "MISS");
     const response = await axios.get(newUrl);
     const data = response.data;
