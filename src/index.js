@@ -2,6 +2,7 @@
 import yargs from "yargs";
 import { app } from "./server.js";
 import { hideBin } from "yargs/helpers";
+import cache from "./cache.js";
 
 yargs(hideBin(process.argv))
   .command(
@@ -32,7 +33,7 @@ yargs(hideBin(process.argv))
       console.log(argv);
       if (argv.clearCache || argv.c) {
         console.log("Cache cleared");
-        // Clear the cache logic...
+        cache.flushAll();
       }
 
       process.env.ORIGIN_URL = argv.origin;
