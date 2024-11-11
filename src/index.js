@@ -36,7 +36,6 @@ yargs(hideBin(process.argv))
         console.log("Clearing cached entries...");
         clearCache();
       }
-
       process.env.ORIGIN_URL = argv.origin;
       app.listen(argv.port, () => {
         console.log(`Caching proxy server listening on port ${argv.port}`);
