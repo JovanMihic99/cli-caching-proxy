@@ -1,5 +1,5 @@
 # caching
-cache.json
+src/cache.json
 
 # Logs
 logs
