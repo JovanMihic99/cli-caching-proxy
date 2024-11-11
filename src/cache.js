@@ -19,15 +19,13 @@ const loadCacheFromFile = () => {
 };
 
 const saveCacheToFile = () => {
-  const allKeys = cache.keys();
-
   const entries = [];
   for (const url in cache.data) {
     if (Object.prototype.hasOwnProperty.call(cache.data, url)) {
-      let obj = { key: "", val: "" };
+      let newEntry = { key: "", val: "" };
       const element = cache.data[url];
-      obj.key = url;
-      obj.val = element.v;
+      newEntry.key = url;
+      newEntry.val = element.v;
       entries.push(obj);
     }
   }
