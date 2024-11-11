@@ -2,7 +2,6 @@
 import yargs from "yargs";
 import { app } from "./server.js";
 import { hideBin } from "yargs/helpers";
-import { cache } from "./cache.js";
 import { clearCache } from "./cache.js";
 
 yargs(hideBin(process.argv))
@@ -31,7 +30,6 @@ yargs(hideBin(process.argv))
         });
     },
     (argv) => {
-      console.log(argv);
       if (argv.clearCache || argv.c) {
         console.log("Clearing cached entries...");
         clearCache();
