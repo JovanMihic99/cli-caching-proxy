@@ -1,11 +1,7 @@
 import express from "express";
 import NodeCache from "node-cache";
 import axios from "axios";
-
-const cacheOptions = {
-  stdTTL: 5 * 60, // time to live 5 mins
-};
-const cache = new NodeCache(cacheOptions);
+import cache from "../cache.js";
 
 const router = express.Router();
 
