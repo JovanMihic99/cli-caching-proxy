@@ -33,8 +33,13 @@ const saveCacheToFile = () => {
   console.log("Cache saved to file");
 };
 
+const clearCache = () => {
+  fs.writeFileSync(cacheFilePath, "", "utf-8");
+  console.log("Cleared cache entries.");
+};
+
 loadCacheFromFile();
 
 setInterval(saveCacheToFile, 1000 * 30); // save cache every 30 seconds
 
-export default cache;
+export { cache, clearCache };
