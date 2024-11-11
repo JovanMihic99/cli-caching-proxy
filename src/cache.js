@@ -26,7 +26,7 @@ const saveCacheToFile = () => {
       const element = cache.data[url];
       newEntry.key = url;
       newEntry.val = element.v;
-      entries.push(obj);
+      entries.push(newEntry);
     }
   }
   fs.writeFileSync(cacheFilePath, JSON.stringify(entries), "utf-8");
