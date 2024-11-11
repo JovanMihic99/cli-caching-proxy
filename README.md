@@ -22,7 +22,7 @@ A simple, learning-focused command-line caching proxy. This project explores bas
 ## Features
 
 - **Response Caching**: Saves responses temporarily to reduce repeated network requests.
-- **Customizable Options**: Control cache duration and proxy port via CLI.
+<!-- - **Customizable Options**: Control cache duration and proxy port via CLI. -->
 
 ## Prerequisites
 
