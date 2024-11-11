@@ -24,7 +24,7 @@ yargs(hideBin(process.argv))
         })
         .option("clear-cache", {
           alias: "c",
-          describe: "Clear the cache",
+          describe: "Start server with empty cache",
           default: false,
           type: "boolean",
         });
