@@ -42,7 +42,6 @@ yargs(hideBin(process.argv))
         });
     },
     (argv) => {
-      console.log(argv);
       if (argv.clearCache || argv.c) {
         console.log("Clearing cached entries...");
         clearCache();

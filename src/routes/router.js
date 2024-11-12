@@ -18,9 +18,9 @@ router.get("*", async (req, res) => {
   try {
     const response = await axios.get(newUrl, { params }); //send request with params
     const data = response.data;
-    res.setHeader("X-Cache", "MISS");
-    res.set(response.headers);
-    cache.set(newUrl, data);
+    res.setHeader("X-Cache", "MISS"); // set cache headers
+    res.set(response.headers); // set headers
+    cache.set(newUrl, data); // save to cache
     return res.status(200).json(data);
   } catch (error) {}
 });
