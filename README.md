@@ -27,7 +27,7 @@ This project explores basic caching, proxy configuration, and CLI interactions w
 
 ## Prerequisites
 
-- Node.js
+- Node.js (version 14 and higher)
 - npm
 
 ## Setup
