@@ -79,7 +79,7 @@ Sending a GET request to `http://localhost:3000/test` would be the equivalent to
 
 ### Example with API key
 
-Run on port `3000` with the origin URL `https://api.openweathermap.org/data/2.5/weather` and your API key for openweather API
+Run on port `3000` with the origin URL `https://api.openweathermap.org/data/2.5/weather` and your API key for openweather API (or whichever API you are using)
 
 ```
 caching-proxy start -p 3005 -o https://api.openweathermap.org/data/2.5/weather -n appid -k [YOUR API KEY]
