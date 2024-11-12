@@ -100,3 +100,4 @@ Available CLI options:
 ## Note
 
 This is a learning project, meant to practice caching and proxy techniques. Contributions are welcome but should align with its educational goals.
+Submitted as a solution to: https://roadmap.sh/projects/caching-server
