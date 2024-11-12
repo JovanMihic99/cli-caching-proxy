@@ -22,7 +22,7 @@ This project explores basic caching, proxy configuration, and CLI interactions w
 
 ## Features
 
-- **Response Caching**: Saves responses temporarily to reduce repeated network requests.
+- **Response Caching**: Saves responses to reduce repeated network requests.
 - **API key support**: Supports APIs which require API keys.
 
 ## Prerequisites
