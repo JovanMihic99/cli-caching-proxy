@@ -7,17 +7,16 @@ const router = express.Router();
 router.get("*", async (req, res) => {
   const newUrl = req.origin + req.url;
   const cachedResponse = cache.get(newUrl);
-  console.log({ ...url.parse(req.url, true).query });
   const params = new URLSearchParams({
     [req.apiKeyName]: req.apiKeyValue,
-    ...url.parse(newUrl, true).query,
+    ...url.parse(newUrl, true).query, // add the query params from original request
   });
   if (cachedResponse) {
     res.setHeader("X-Cache", "HIT");
     return res.status(200).json(cachedResponse);
   }
   try {
-    const response = await axios.get(newUrl, { params });
+    const response = await axios.get(newUrl, { params }); //send request with params
     const data = response.data;
     res.setHeader("X-Cache", "MISS");
     res.set(response.headers);
