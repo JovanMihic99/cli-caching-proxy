@@ -1,6 +1,7 @@
 # CLI Caching Proxy
 
-A simple, learning-focused command-line caching proxy. This project explores basic caching, proxy configuration, and CLI interactions to improve my understanding of caching mechanisms and Node.js server operations.
+A command line interface caching proxy sever.
+This project explores basic caching, proxy configuration, and CLI interactions with the goal of improving my understanding of caching mechanisms and Node.js server operations.
 
 ## Table of Contents
 
@@ -22,7 +23,7 @@ A simple, learning-focused command-line caching proxy. This project explores bas
 ## Features
 
 - **Response Caching**: Saves responses temporarily to reduce repeated network requests.
-<!-- - **Customizable Options**: Control cache duration and proxy port via CLI. -->
+- **API key support**: Supports APIs which require API keys.
 
 ## Prerequisites
 
@@ -42,6 +43,8 @@ npm link
 
 ## Usage
 
+### Basic usage
+
 To start the proxy with specified options:
 
 ```bash
@@ -54,21 +57,45 @@ Or you can use aliases (see `caching-proxy start -h` for more details )
 caching-proxy start -p <PORT> -o <ORIGIN_URL>
 ```
 
-## Example
+### Usage with API keys
 
-Run on port `3000` with the origin url `http://dummyjson.com`
+You can pass API keys with `--api-key-name`(or `-n`) and `--api-key-value`(or `-k`)
+
+```bash
+caching-proxy start -p 3005 -o https://api.openweathermap.org/data/2.5/weather -n appid -k [YOUR API KEY]
+```
+
+## Examples
+
+### Basic example
+
+Run on port `3000` with the origin URL `http://dummyjson.com`
 
 ```bash
  caching-proxy start  -p 3000 -o http://dummyjson.com
 ```
 
+Sending a GET request to `http://localhost:3000/test` would be the equivalent to sending a GET request to `http://dummyjson.com/test`
+
+### Example with API key
+
+Run on port `3000` with the origin URL `https://api.openweathermap.org/data/2.5/weather` and your API key for openweather API
+
+```
+caching-proxy start -p 3005 -o https://api.openweathermap.org/data/2.5/weather -n appid -k [YOUR API KEY]
+```
+
+Sending a GET request to `http://localhost:3000/?q=London` would be the equivalent to sending a GET request to `https://api.openweathermap.org/data/2.5/?q=London&appid=[YOUR API KEY]`
+
 ## Configuration
 
 Available CLI options:
 
-- `--port`: Proxy server port (required)
-- `--origin`: Base URL of the server that you want to cache (required)
-- `--clear-cache`: Start the server and clear any previous cache (default: false)
+- `--port`(`-p`): Proxy server port (**required**)
+- `--origin`(`-o`): Base URL of the server that you want to cache (**required**)
+- `--clear-cache`(`-c`): Start the server and clear any previous cache (**default: false**)
+- `--api-key-name`(`-n`): Name of the API key URL query parameter (**optional**)
+- `--api-key-value`(`-k`): Value of your API key (**optional**)
 
 ## Note
 
